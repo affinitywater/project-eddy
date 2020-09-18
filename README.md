@@ -60,6 +60,12 @@ We use xgboost regression throughout.
 * Install smart meters in one representative DMA for insight as well as validation
 * Share ideas among water companies and propose changes / improvements to this model
 
+<h3>Requirements</h3>
+
+* 256GB Memory
+* 12-24+ hours running time depending on the number of cores used, we used 32
+* Jupyter Notebook - see requirements.txt for libraries used. Use 'pip install -r requirements.txt' to install the libraries.
+
 <h3>Any questions?</h3>
 
 Please post them here and we'll do our best to answer them.
