@@ -15,7 +15,7 @@ Here is an example of one of the resulting distribution for one of the customers
 
 A good way to progress this work is to install sufficient number of smart meters to be able to validate the daily variance and then use the insights to map onto the rest of the network and have a really useful PCC / Marketing solution. Meter read data is often partial, having one or two reads over many years for a large portion of the customers, and there are often data quality issues, for example date or reading entered wrong that now plays tricks on our model.
 
-<h3> Performance <h3>
+<h3> Performance </h3>
 
 You can expect to get the following performance on the final model: <br>
 
