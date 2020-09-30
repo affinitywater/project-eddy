@@ -15,6 +15,13 @@ Here is an example of one of the resulting distribution for one of the customers
 
 A good way to progress this work is to install sufficient number of smart meters to be able to validate the daily variance and then use the insights to map onto the rest of the network and have a really useful PCC / Marketing solution. Meter read data is often partial, having one or two reads over many years for a large portion of the customers, and there are often data quality issues, for example date or reading entered wrong that now plays tricks on our model.
 
+<h3> Performance <h3>
+
+You can expect to get the following performance on the final model: <br>
+
+Training set score: 82% <br>
+Testing set score: 77%
+
 <h3> Modelling technique </h3>
 
 We use xgboost regression throughout.
@@ -47,12 +54,53 @@ We use xgboost regression throughout.
   -Take away all COVID-related variables <br>
   -Produce model validation
   
+<h3>Data</h3>
+
+Note: Data is anonymised. Use some or all of the data to build a model or create your own dataset by using your own networks' data. <br>
+
+* Meter readings <br>
+  -Includes domestic vs nondomestic <br>
+  -Includes measured vs Unmeasured
+* Household descriptive data <br>
+  -Class description <br>
+  -Misc descriptions <br>
+  -Building class <br>
+  -Building age <br>
+  -Building type <br>
+  -Storeys
+* Acorn demographics data <br>
+  -Category, groupy and type <br>
+  -Occupancy rate
+* Weather data - median daily AW-wide values per weather variable <br>
+  -Air Pressure <br>
+  -Compass <br>
+  -Humidity <br>
+  -Lightning Count <br>
+  -Radiation <br>
+  -Rainfall <br>
+  -Rainfall Intensity <br>
+  -Temperature <br>
+  -Wind Chill <br>
+  -Wind Direction <br>
+  -Wind Speed <br>
+* Seasonality <br>
+  -Month of the year <br>
+  -Day of the week <br>
+  -School holidays <br>
+  -Public holidays <br>
+  -COVID period <br>
+  -COVID stage <br>
+  -New COVID deaths <br>
+  -New Hospital admissions <br>
+  -New COVID cases
+  
 <h3>Why is this useful?</h3>
 
 * Know to-date per capita consumption figures across the board
 * Run various what-if scenarios. Any scenario-related data that a company anticipates to use must be included into the model. Alternatively the model can be quickly re-trained to include new types of data
 * Improve marketing campaigns and their targetting
 * This model can still be used at meter read windows level to predict what the next / current meter reading would look like, then we can fully validate it with 80-90% accuracy reading by reading, and overall PHC / PCC figures that vary <1% compared to actuals
+* The daily models can be skipped and the general and final model can use the standard 'daily_consumption' as dependent variable rather than the redistributed 'new_daily_consumption' if it feels like we are doing too much data manipulation here.
 
 <h3>Next steps</h3>
 
